@@ -1,0 +1,39 @@
+@import url(./menu.css);
+@import url(./icon.css);
+@import url(./tooltip.css);
+@import url(./header.css);
+body {
+    margin: 0;
+}
+
+.the__main {
+    display: flex;
+    flex-direction: row ;
+    height: 100vh;
+    width: 100wh;
+}
+.the__menu {
+    width: 80px;
+    height: 100vh;
+    background-color: #1e40af;
+    
+}
+
+.the__body {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 80px);
+
+}
+.the__header {
+    margin: 0 10px ;
+    height: 60px;
+    width: calc(100% - 20px);
+}
+
+
+.the__content {
+    margin: 0 10px ;
+    width: calc(100% - 20px);
+    height: calc(100% - 60px) ;
+}

@@ -1,0 +1,22 @@
+.the__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_right{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+.icon_notify{
+    cursor: pointer;
+    background-image: url(../icon/notify.png);
+}
+.user_icon{
+    cursor: pointer;
+    border: unset;
+    margin-left: 10px ;
+    border-radius: 50%;
+    background-color: rgb(151, 144, 44);
+}
