@@ -20,3 +20,8 @@
     border-radius: 50%;
     background-color: rgb(151, 144, 44);
 }
+
+.name-class{
+    font-weight: 700;
+    font-size: 20px;
+}

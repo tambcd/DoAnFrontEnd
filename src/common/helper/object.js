@@ -2,33 +2,33 @@ const DataObject = {
     optionMenu : [
         
         {
-          ItemID: 1,
           ItemTxt: "Trang chủ",
-          item_icon: "icon_menu_home",
+          item_icon: "home-outline",
           path: "/home",
         },
         {
-          ItemID: 2,
+          ItemTxt: "Sinh viên",
+          item_icon: "people-circle-outline",
+          path: "/students",
+        },
+        {
           ItemTxt: "Điểm",
-          item_icon: "icon_menu_scored",
+          item_icon: "book-outline",
           path: "/score",
         },
         {
-          ItemID: 3,
           ItemTxt: "Sự kiện",
-          item_icon: "icon_menu_event",
+          item_icon: "calendar-number-outline",
           path: "/event",
         },
         {
-            ItemID: 4,
             ItemTxt: "Báo cáo thống kê",
-            item_icon: "icon_menu_statistical",
+            item_icon: "bar-chart-outline",
             path: "/statistical",
           },
           {
-            ItemID: 5,
-            ItemTxt: "Cài đặt",
-            item_icon: "icon_menu_setting",
+            ItemTxt: "Đăng xuất",
+            item_icon: "log-out-outline",
             path: "/setting",
 
           },

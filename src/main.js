@@ -3,7 +3,8 @@ import App from './App.vue'
 import {router} from './router/router';
 import mitt from 'mitt';
 import {requiredComponents} from './globalComponents'
-import "ant-design-vue/dist/antd.css";
+import 'ant-design-vue/dist/antd.css';
+
 // event bus
 const emitter = mitt();
 const app = createApp(App);

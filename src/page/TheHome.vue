@@ -1,5 +1,5 @@
 <template>
-  danh sach nhan vien
+  
   <div class="input_search">
 
   <InputSearch
@@ -15,17 +15,22 @@
     </Button>
   </div>
 
-  <Table :columns="columns" :pagination="false" :dataSource="dataSource"   :loading="loading"></Table>
-  <Pagination v-model:current="current" :total="500" @showSizeChange="(a,b)=>showsize(a,b)" :show-total="total => `Total ${total} items`"/>
+  <Table :columns="columns" :pagination="false" :dataSource="dataSource"   :loading="loading" @resizeColumn="handleResizeColumn"></Table>
+  <Pagination v-model:current="current" :total="500" @showSizeChange="(a,b)=>showsize(a,b)" :show-total="total => `Sĩ số ${total} sinh viên`"/>
+  <DatePicker v-model:value="value1" />
+
+  <HomeOutlined />
+
 
 </template>
-
 <script>
-import { Pagination,Table  ,InputSearch,Button} from "ant-design-vue";
+import { Pagination,Table  ,InputSearch,Button,DatePicker} from "ant-design-vue";
+import { HomeOutlined } from '@ant-design/icons-vue';
+
 
 export default {
     name:"TheHome",
-    components:{Pagination,Table ,InputSearch,Button},
+    components:{Pagination,Table ,InputSearch,Button,DatePicker,HomeOutlined},
     data() {
       return {
         value:"",
@@ -62,16 +67,19 @@ export default {
             title: 'STT',
             dataIndex: 'stt',
             key: 'stt',
+             resizable: true,
           },
           {
             title: 'Mã sinh viên',
             dataIndex: 'msv',
             key: 'msv',
+             resizable: true,
           },
           {
             title: 'Họ và tên',
             dataIndex: 'name',
             key: 'name',
+             resizable: true,
           },
         ],
       }
@@ -83,7 +91,10 @@ export default {
       },
       onSearch(value){
         console.log(value);
-      }
+      },
+       handleResizeColumn(w, col) {
+        col.width = w;
+      },
     },
 }
 </script>
