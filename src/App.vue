@@ -18,7 +18,7 @@ export default {
   components: {TheMenu,TheHeader },
   data() {
     return {
-      isMiniMenu:false
+      isMiniMenu:true
     }
   },
 }

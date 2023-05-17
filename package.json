@@ -12,10 +12,12 @@
     "ant-design-vue": "^3.2.20",
     "axios": "^1.3.3",
     "core-js": "^3.8.3",
+    "lodash.debounce": "^4.0.8",
     "mitt": "^3.0.0",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6",
-    "vuetify": "^3.2.2"
+    "vuetify": "^3.2.2",
+    "vue3-toastify": "^0.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const API = 'https://localhost:7115/api/v1/';
+const API = 'https://localhost:7155/api/v1/';
 
 /**
  * Description: Hàm để get dữ liệu không tham số. 
@@ -28,7 +28,7 @@ export const getByFilter = (route = '',param ,success, errorHandler) => {
         })
 }
 /** 
- * Description: Hàm để lấy dữ liệu có tham số.
+ * Description: Hàm để đẩy dữ liệu có tham số.
  * created : tvTam (22/02/2023)
  */
 export const postByFilter = (route = '',param ,success, errorHandler) => {

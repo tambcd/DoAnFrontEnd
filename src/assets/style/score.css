@@ -1,0 +1,13 @@
+.score{
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+}
+.score-top{
+    display: flex;
+
+}
+.score-filter{
+    display: flex;
+    flex-direction: row;
+}

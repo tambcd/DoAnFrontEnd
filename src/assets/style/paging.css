@@ -1,0 +1,7 @@
+.paging{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(240, 246, 246);
+}

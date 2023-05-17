@@ -4,6 +4,8 @@ import {router} from './router/router';
 import mitt from 'mitt';
 import {requiredComponents} from './globalComponents'
 import 'ant-design-vue/dist/antd.css';
+import 'vue3-toastify/dist/index.css';
+
 
 // event bus
 const emitter = mitt();

@@ -1,0 +1,26 @@
+.dialog-model{
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(16, 1, 1, 0.523);
+}
+.dialog-content{
+    position: absolute;
+    background-color: #f4f7ff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-54%);
+    border-radius: 4px;
+    
+
+}
+.dialog-main{
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    background-color: #f4f7ff;
+}

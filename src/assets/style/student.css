@@ -1,0 +1,53 @@
+.student{
+    background-color: rgb(241 245 249);
+    padding: 0 10px;
+    height: 100%;
+    width: 100%;
+    height: calc(100% - 6px);
+
+}
+.data-table-student{
+    overflow: auto;
+    height: calc(100% - 100px);
+}
+.student-top{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-button button{
+    margin-left: 10px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgb(30 64 175);
+}
+.search{
+    position: relative;
+    width: 350px;
+    margin:  0 10px;
+
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black1);
+}
+.search label input:focus{
+    border: 1px solid var(--black1);
+}
+.search label ion-icon{
+    position: absolute;
+    top: -4px;
+    left: 10px;
+    font-size: 1.5em;
+}

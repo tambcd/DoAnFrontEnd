@@ -15,7 +15,7 @@ export default {
   name: "TheHeader",
   data() {
     return {
-      miniMenu:false
+      miniMenu:true
     }
   },
   methods: {
