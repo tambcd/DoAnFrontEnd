@@ -9,6 +9,10 @@
 @import url(score.css);
 @import url(home.css);
 @import url(dialog.css);
+@import url(modelscore.css);
+@import url(modelevent.css);
+@import url(eventdetail.css);
+@import url(login.css);
 
 *::-webkit-scrollbar {
     width: 5px;

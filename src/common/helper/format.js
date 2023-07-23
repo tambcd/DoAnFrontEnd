@@ -19,8 +19,8 @@ export function reverse(string) {
      * ham : định dạng số thập phân
      */
 export function formatDouble(string) {
- 
-  return string.replaceAll(".",",");
+
+  return string.replaceAll(".", ",");
 }
 /**
      * create by : MF1270
@@ -28,8 +28,8 @@ export function formatDouble(string) {
      * ham : định dạng số thập phân
      */
 export function Doubletonumber(string) {
- 
-  return Number(string.replaceAll(",",""));
+
+  return Number(string.replaceAll(",", ""));
 }
 
 
@@ -75,14 +75,14 @@ export function getNowday() {
   // mặc đinh là ngày hiện tại
   if (new Date().getMonth() + 1 < 10) {
     if (new Date().getDate() < 10) {
-      return  new Date().getFullYear().toString() + "-0" + (new Date().getMonth() + 1).toString() + "-0" + new Date().getDate().toString();
+      return new Date().getFullYear().toString() + "-0" + (new Date().getMonth() + 1).toString() + "-0" + new Date().getDate().toString();
     }
-    return new Date().getFullYear().toString() + "-0" + (new Date().getMonth() + 1).toString() +   "-" +  new Date().getDate().toString();
+    return new Date().getFullYear().toString() + "-0" + (new Date().getMonth() + 1).toString() + "-" + new Date().getDate().toString();
   } else {
     if (new Date().getDate() < 10) {
       return new Date().getFullYear().toString() + "-" + (new Date().getMonth() + 1).toString() + "-0" + new Date().getDate().toString();
     }
-    return new Date().getFullYear().toString() + "-" + (new Date().getMonth() + 1).toString() +  "-" + new Date().getDate().toString();
+    return new Date().getFullYear().toString() + "-" + (new Date().getMonth() + 1).toString() + "-" + new Date().getDate().toString();
   }
 }
 
@@ -130,49 +130,88 @@ export function dateToString(dateNew) {
 }
 
 
- /**
-     * @create by : MF1270
-     * @create day : 03/03/2023
-     * ham : tiền thành số
-     */
-  export function moneyToNumber(money) {
+/**
+    * @create by : MF1270
+    * @create day : 03/03/2023
+    * ham : tiền thành số
+    */
+export function moneyToNumber(money) {
   if (money.length > 3) {
     money.replaceAll(".", "");
     return Number(money.replaceAll(".", ""));
   }
   return Number(money);
 }
-    /**
-     * @create by : MF1270
-     * @create day : 18/04/2023
-     * ham : định dạng ngày tháng hiện thị
-     */
-export function dateToStringShow(dateNew){
+/**
+ * @create by : MF1270
+ * @create day : 18/04/2023
+ * ham : định dạng ngày tháng hiện thị
+ */
+export function dateToStringShow(dateNew) {
   if (new Date(dateNew).getMonth() + 1 < 10) {
     if (new Date(dateNew).getDate() < 10) {
       return (
         "0" + new Date(dateNew).getDate().toString() + "/0" +
-        (new Date(dateNew).getMonth() + 1).toString() + "/"+
-        new Date(dateNew).getFullYear().toString()         
+        (new Date(dateNew).getMonth() + 1).toString() + "/" +
+        new Date(dateNew).getFullYear().toString()
       );
     }
     return (
-       new Date(dateNew).getDate().toString() + "/0" +
-        (new Date(dateNew).getMonth() + 1).toString() + "/"+
-        new Date(dateNew).getFullYear().toString()      
+      new Date(dateNew).getDate().toString() + "/0" +
+      (new Date(dateNew).getMonth() + 1).toString() + "/" +
+      new Date(dateNew).getFullYear().toString()
     );
   } else {
     if (new Date(dateNew).getDate() < 10) {
       return (
         "0" + new Date(dateNew).getDate().toString() + "/" +
-        (new Date(dateNew).getMonth() + 1).toString() + "/"+
+        (new Date(dateNew).getMonth() + 1).toString() + "/" +
         new Date(dateNew).getFullYear().toString()
       );
     }
     return (
-       new Date(dateNew).getDate().toString() + "/" +
-        (new Date(dateNew).getMonth() + 1).toString() + "/"+
-        new Date(dateNew).getFullYear().toString()
+      new Date(dateNew).getDate().toString() + "/" +
+      (new Date(dateNew).getMonth() + 1).toString() + "/" +
+      new Date(dateNew).getFullYear().toString()
     );
   }
 }
+
+export function score4(score) {
+  if (score < 2) {
+    return 0;
+  }
+  else if (score < 4) {
+    return 0.5;
+  }
+  if (score < 4.5) {
+    return 1;
+  }
+  else if (score < 5.5) {
+    return 1.5;
+  }
+  else if (score < 6) {
+    return 2;
+  }
+  else if (score < 7)
+    return 2.5;
+  else if (score < 8)
+    return 3;
+  if (score < 8.5)
+    return 3.5;
+  if (score < 9.5)
+    return 3.8
+
+  if(score >= 9.5)
+  return 4;
+}
+
+export function statusScore(score) {
+
+  if(score < 4){
+      return "Không đạt"
+  }
+  return "Đạt"
+
+}
+

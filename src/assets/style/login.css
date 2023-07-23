@@ -1,0 +1,29 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: url(../icon/Background.jpg);
+}
+.main_login{
+    position:absolute;
+    height: 400px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 20px rgba(0, 0, 0, 0.2);
+
+}
+.main_login div{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 20px 10px;
+}
+.title_login{
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    display: flex;
+    justify-content: center;
+}

@@ -18,6 +18,12 @@
         :titleTootip="item.ItemTxt"
         :isTootip="miniMenu"
       />
+        <li @click="logout()">
+          <router-link to="/login">
+          <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+          <span class="title">Đăng xuất </span>
+          </router-link>
+        </li>
     </ul>
   </div>
 </template>
@@ -30,12 +36,26 @@ export default {
   name: "TheMenu",
   props: {
     miniMenu: { default: true },
+    roleUser: { default: 1 },
+  },
+  created() {
+    if (this.roleUser == 1) {
+      this.listItemMenu = DataObject.optionMenuUser;
+    } else {
+      this.listItemMenu = DataObject.optionMenuAdmin;
+    }
   },
   components: { BaseItemMenu },
   data() {
     return {
-      listItemMenu: DataObject.optionMenu,
+      listItemMenu: DataObject.optionMenuUser,
     };
+  },
+  methods: {
+    logout(){
+      localStorage.clear();
+      this.$emit("logout")
+    }
   },
 };
 </script>

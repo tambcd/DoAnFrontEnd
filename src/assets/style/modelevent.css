@@ -1,0 +1,14 @@
+.schedule_time_input{
+  width: 100%;
+  margin:10px 0;
+}
+
+.time_start_end{
+    margin:10px 0;
+}
+.ant-picker-range{
+    width: 100%;
+}
+.content_schdule{
+    margin:  10px 0;
+}

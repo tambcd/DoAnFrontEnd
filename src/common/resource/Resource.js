@@ -1,4 +1,13 @@
 export  const Resource = {
+    errologin:"Tài khoản mật khẩu không chính xác",
+    typeAddEvent:{
+        add:"Thêm mới sự kiên",
+        update:"Sửa sự kiện"
+    },
+    typeadd:{
+        add:"Thêm điểm",
+        update:"Sửa điểm"
+    },
     typeLicensetxt:{
         add:"Thêm chứng từ ghi tăng",
         update:"Sửa chứng từ ghi tăng "

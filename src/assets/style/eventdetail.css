@@ -1,0 +1,74 @@
+.body_model_event{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+
+}
+.comment_model_event{
+    width:  70%;
+    height: 100%;
+   
+}
+.inf_model_event{
+    width: 30%;
+    height: 100%;
+}
+.title_created ion-icon{
+    font-size: 15px;
+}
+.title_created{
+    font-size: 15px;
+}
+.content_detail{
+    font-weight: 600;
+    font-size: 15px;
+}
+.menu_detail{
+    font-size: 15px;
+   
+}
+.menu_detail div{
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.menu_detail div span{
+    margin-left: 20px;
+}
+.menu_detail  ion-icon{
+    font-size: 18px;
+}
+.menu_detail div:hover{
+    background-color: rgba(0, 255, 255, 0.192);
+    width: 100%;
+    cursor: pointer;
+}
+.menu_detail .menu_delete{
+    color: red;
+}
+.title_comment{
+    height: 50px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.body_comment_model_event{
+    height: calc(400px);
+    overflow: auto;
+}
+.footer_body_comment_model_event{
+    height: 50px;
+    padding: 10px;
+}
+.comment_item{
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: rgb(241 245 249);
+    min-width: 200px;
+    max-width: 90%;
+    padding: 10px;
+}
+.comment_item .autho{
+    font-weight: 700;
+}

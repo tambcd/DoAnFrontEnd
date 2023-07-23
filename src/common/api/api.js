@@ -71,7 +71,7 @@ export const put  = (route = '',param, data, success, errorHandler) =>{
  * Description: Hàm xóa dữ liệu dựa trên tham số đàu vào.
  * created : tvTam (22/02/2023)
  */
-export const deleteAssets = (route = '', param, success, errorHandler) =>{
+export const deleteOne = (route = '', param, success, errorHandler) =>{
     return  Axios.delete(API + route +`/${param}`).then((response) =>success(response)).catch((error) => errorHandler(error));
 }
 
@@ -80,7 +80,7 @@ export const deleteAssets = (route = '', param, success, errorHandler) =>{
  * created : tvTam (22/02/2023)
  */
  
-export const deleteManyAssets = (route = '', data, success, errorHandler) =>{
+export const deleteMany = (route = '', data, success, errorHandler) =>{
     return  Axios.delete(API + route ,data).then((response) =>success(response)).catch((error) => errorHandler(error));
 }
 /**

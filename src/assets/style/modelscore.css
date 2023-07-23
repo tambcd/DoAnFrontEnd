@@ -1,0 +1,36 @@
+.top-inf{
+    display: flex;
+    justify-content: space-between;
+}
+.top-inf .code_student{
+
+    width: 30%;
+}
+.top-inf .name_student{
+    width: 60%;
+}
+.subject{
+    margin-top: 10px;
+}
+.score-inf{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-model{
+    width: 33%;
+}
+.number_shif{
+    width: 33%;
+}
+.times_learn{
+    width: 33%;
+}
+.school_year{
+    display: flex;
+    margin-top: 10px;
+}
+.semester{
+    margin-left: 20px;
+}

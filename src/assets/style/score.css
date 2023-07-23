@@ -1,13 +1,44 @@
 .score{
     width: 100%;
     height: 100%;
-    background-color: aqua;
+}
+.search-score{
+    margin-left: 10px;
 }
 .score-top{
     display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    height: 50px;
+    align-items: center;
 
 }
 .score-filter{
     display: flex;
     flex-direction: row;
+}
+.score-body{
+    height: calc(100% - 50px);
+    padding: 10px;
+}
+.data-table-score{
+    height: calc(100% - 50px);
+    overflow: auto;
+}
+.paging-score{
+    margin-top: 10px;
+    height: 50px;
+}
+thead{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 10;
+    
+   
+}
+
+.filter-elr{
+    margin: 0 10px;
 }
