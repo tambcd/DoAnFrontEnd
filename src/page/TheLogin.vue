@@ -1,19 +1,22 @@
 <template>
   <div class="login">
     <div class="main_login">
-      <div class="title_login">Đăng nhập</div>
-      <div class="username">
-        Tên tài khoản
-        <Input v-model:value="username" placeholder="Mã sinh viên..." />
-      </div>
-      <div class="username">
-        Mật khẩu
-        <InputPassword v-model:value="password" placeholder="Mật khẩu" />
-      </div>
-      <div class="btn_login">
-        <Button type="primary"  style="width: 100%" @click="login()"
-          >Đăng nhập</Button
-        >
+      <div class="main_login_img">hello</div>
+      <div class="main_login_infor">
+        <div class="title_login">Đăng nhập</div>
+        <div class="username">
+          Tên tài khoản
+          <Input v-model:value="username" placeholder="Mã sinh viên..." />
+        </div>
+        <div class="username">
+          Mật khẩu
+          <InputPassword v-model:value="password" placeholder="Mật khẩu" />
+        </div>
+        <div class="btn_login">
+          <Button type="primary" style="width: 100%" @click="login()"
+            >Đăng nhập</Button
+          >
+        </div>        
       </div>
     </div>
   </div>
@@ -40,14 +43,13 @@ export default {
         `Accounts/login?username=${this.username} &password=${this.password}`,
         (res) => {
           if (res.data.account_id) {
-            localStorage.setItem("userId",res.data.account_id);
-            this.$emit("loginok",res.data)
-           
+            localStorage.setItem("userId", res.data.account_id);
+            this.$emit("loginok", res.data);
           } else {
-             toast.error(Resource.errologin, {
-            autoClose: 2000,
-            position: "top-center",
-          });
+            toast.error(Resource.errologin, {
+              autoClose: 2000,
+              position: "top-center",
+            });
           }
         },
         (error) => {

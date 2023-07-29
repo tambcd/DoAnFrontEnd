@@ -2,19 +2,27 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background: url(../icon/Background.jpg);
+    background-color: #FFFFFF;
 }
 .main_login{
+    display: flex;    
     position:absolute;
-    height: 400px;
-    width: 500px;
-    background-color: rgba(0, 0, 0, 0.2);
+    height: 600px;
+    width: 800px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 10px;
     box-shadow: 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2); ;
 
+}
+.main_login_img{
+    width: 50%;
+}
+.main_login_infor{
+    width: 50%;
+    padding: 0 20px;
 }
 .main_login div{
     font-size: 14px;
