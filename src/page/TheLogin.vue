@@ -1,19 +1,37 @@
 <template>
   <div class="login">
     <div class="main_login">
-      <div class="title_login">Đăng nhập</div>
-      <div class="username">
-        Tên tài khoản
-        <Input v-model:value="username" placeholder="Mã sinh viên..." />
+      <div class="left-login">
+        <img src="https://img.freepik.com/premium-vector/stylish-bright-creative-text-welcome-white-background-vector_532963-3106.jpg?w=2000" alt="welcome">
       </div>
-      <div class="username">
-        Mật khẩu
-        <InputPassword v-model:value="password" placeholder="Mật khẩu" />
-      </div>
-      <div class="btn_login">
-        <Button type="primary"  style="width: 100%" @click="login()"
-          >Đăng nhập</Button
-        >
+      <div class="right-login">
+        <div class="title_login">
+          <img src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/e19adc023378cfaab4f274dc82067b4d.png" alt="login">
+        </div>
+        <div class="username">
+          <Input v-model:value="username" placeholder="Mã sinh viên..." />
+        </div>
+        <div class="username">
+          <InputPassword style="border-radius: 10px; height: 40px; " v-model:value="password" placeholder="Mật khẩu"  />
+        </div> 
+        <div>
+        </div>
+        <div class="btn_login">
+          <Button type="primary"  style="width: 100%" @click="login()"
+            >Đăng nhập</Button
+          >
+        </div>
+        <div class="sign">
+          <a href="">Đăng ký</a>
+          <a href="">Quên mật khẩu</a>
+        </div>
+        <div class="text">Hoặc đăng nhập với</div>
+        <div class="social-media">
+          <img src="https://vi.wizcase.com/wp-content/uploads/2022/05/Facebook-Logo.png" alt="face">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="insta">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="mail">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" alt="apple">
+        </div>
       </div>
     </div>
   </div>
@@ -42,7 +60,6 @@ export default {
           if (res.data.account_id) {
             localStorage.setItem("userId",res.data.account_id);
             this.$emit("loginok",res.data)
-           
           } else {
              toast.error(Resource.errologin, {
             autoClose: 2000,

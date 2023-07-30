@@ -2,21 +2,43 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background: url(../icon/Background.jpg);
+    /* background: url(../icon/Background.jpg); */
+    background: url("https://mega.com.vn/media/news/2707_background-hoc-tap-full-hd3.jpg");
+    background-size: cover;
+}
+.left-login{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-login img {
+    height: 300px;
+    width: 500px;
 }
 .main_login{
     position:absolute;
-    height: 400px;
-    width: 500px;
-    background-color: rgba(0, 0, 0, 0.2);
-    top: 50%;
+    height: 600px;
+    /* width: 500px; */
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    background-color: whitesmoke;
+    top: 55%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 10px;
     box-shadow: 20px rgba(0, 0, 0, 0.2);
-
+    display: flex;
 }
-.main_login div{
+.right-login{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 20px 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.right_login div{
     font-size: 14px;
     font-weight: 500;
     margin: 20px 10px;
@@ -24,6 +46,37 @@
 .title_login{
     font-size: 25px !important;
     font-weight: 700 !important;
+    display: flex;
+    justify-content: center;
+}
+.title_login img{
+    width: 100px;
+    height: 100px;
+}
+.username input{
+    border-radius: 10px;
+    height: 40px;
+}
+.btn_login button{
+    border-radius: 10px;
+    height: 40px;
+}
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+}
+.sign{
+    display: flex;
+    justify-content: space-between;
+}
+.social-media img{
+    width: 40px;
+    height: 40px;
+    margin: 20px 10px;
+}
+.social-media{
     display: flex;
     justify-content: center;
 }
