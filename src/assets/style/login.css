@@ -47,7 +47,7 @@
     width: 50%;
     padding: 0 20px;
 }
-.main_login div{
+.main_login div
 .right_login div{
     font-size: 14px;
     font-weight: 500;
@@ -63,7 +63,7 @@
     width: 100px;
     height: 100px;
 }
-.username input{
+.username{
     border-radius: 10px;
     height: 40px;
 }

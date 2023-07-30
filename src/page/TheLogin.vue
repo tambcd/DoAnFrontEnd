@@ -9,13 +9,11 @@
           <img src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/e19adc023378cfaab4f274dc82067b4d.png" alt="login">
         </div>
         <div class="username">
-          <Input v-model:value="username" placeholder="Mã sinh viên..." />
+          <Input v-model:value="username" placeholder="Mã sinh viên..."  style="height: 40px"/>
         </div>
         <div class="username">
-          <InputPassword style="border-radius: 10px; height: 40px; " v-model:value="password" placeholder="Mật khẩu"  />
-        </div> 
-        <div>
-        </div>
+          <InputPassword v-model:value="password" placeholder="Mật khẩu" style="height: 40px"  />
+        </div>        
         <div class="btn_login">
           <Button type="primary"  style="width: 100%" @click="login()"
             >Đăng nhập</Button
