@@ -60,11 +60,13 @@ export default {
           if (res.data.account_id) {
             localStorage.setItem("userId",res.data.account_id);
             this.$emit("loginok",res.data)
+            localStorage.setItem("userId", res.data.account_id);
+            this.$emit("loginok", res.data);
           } else {
-             toast.error(Resource.errologin, {
-            autoClose: 2000,
-            position: "top-center",
-          });
+            toast.error(Resource.errologin, {
+              autoClose: 2000,
+              position: "top-center",
+            });
           }
         },
         (error) => {
