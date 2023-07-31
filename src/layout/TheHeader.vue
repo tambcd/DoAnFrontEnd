@@ -4,23 +4,47 @@
       <ion-icon name="menu-outline"></ion-icon>
     </div>
     <div class="menu-app" v-if="showForm">
-      <img src="https://i.pinimg.com/originals/84/4e/8c/844e8cd4ab26c82286238471f0e5a901.png" alt="danh bạ">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Circle-icons-chat.svg/1024px-Circle-icons-chat.svg.png" alt="chat">
+      <div class="app_icon">
+        <div class="icon-app">
+          <img
+            src="https://i.pinimg.com/originals/84/4e/8c/844e8cd4ab26c82286238471f0e5a901.png"
+          />
+        </div>
+        <div class="name_app">Danh bạ</div>
+      </div>
+      <div class="app_icon">
+        <div class="icon-app">
+          <img
+            src="https://amismisa.misacdn.net/images/iconapps/newsfeed.svg?_=20230221"
+          />
+        </div>
+        <div class="name_app">Mạng xã hội</div>
+      </div>
+      <div class="app_icon">
+        <div class="icon-app">
+            <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Circle-icons-chat.svg/1024px-Circle-icons-chat.svg.png"
+       
+      />
+        </div>
+        <div class="name_app">Trò chuyện</div>
+      </div>
+    
     </div>
     <div class="name-class">CNTT1 K60</div>
     <div class="header_right">
       <div class="icon_notify icon24"></div>
-     
-      <Popover >
-        <template #content> 
+
+      <Popover>
+        <template #content>
           <div class="user-detail">
-             <button class="user_icon icon36">{{ TitliAvatar }}</button>
+            <button class="user_icon icon36">{{ TitliAvatar }}</button>
           </div>
           <div class="name-user">
-            {{user.first_name+" "+user.last_name}}
+            {{ user.first_name + " " + user.last_name }}
           </div>
-          <Button  style="width: 100%" type="primary" ghost>Chi tiết</Button>
-           </template>
+          <Button style="width: 100%" type="primary" ghost>Chi tiết</Button>
+        </template>
         <button class="user_icon icon36">{{ TitliAvatar }}</button>
       </Popover>
     </div>
@@ -29,11 +53,11 @@
 
 <script>
 import { getById } from "@/common/api/api";
-import { Popover,Button } from "ant-design-vue";
+import { Popover, Button } from "ant-design-vue";
 
 export default {
   name: "TheHeader",
-  components: { Popover,Button },
+  components: { Popover, Button },
   props: {
     idAccount: { default: "" },
   },
@@ -49,7 +73,7 @@ export default {
     };
   },
   methods: {
-    toggleApp(){
+    toggleApp() {
       this.showForm = !this.showForm;
     },
     toggleMenu() {
@@ -84,7 +108,7 @@ export default {
 </script>
 
 <style>
-.user-detail{
+.user-detail {
   width: 130px;
   display: flex;
   align-content: center;
