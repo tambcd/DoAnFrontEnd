@@ -4,7 +4,7 @@ import TheEvent from '@/page/TheEvent'
 import TheScore from '@/page/TheScore'
 import TheStatistical from '@/page/TheStatistical'
 import TheStudent from '@/page/TheStudent'
-import TheContact from '@/page/TheContact'
+import TheContact from '@/page/contact/TheContact'
 
 const routes = [
     {path:'/',redirect: '/contact'},

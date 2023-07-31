@@ -13,6 +13,7 @@
 @import url(modelevent.css);
 @import url(eventdetail.css);
 @import url(login.css);
+@import url(thecontact.css);
 
 *::-webkit-scrollbar {
     width: 5px;
