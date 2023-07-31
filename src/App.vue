@@ -1,5 +1,5 @@
 <template>
-    <the-login v-if="isLogin" @loginok="loginok"/>
+    <the-login v-if="!isLogin" @loginok="loginok"/>
    <div class="container" v-else>
        <TheMenu :miniMenu="isMiniMenu" :roleUser="roleUser" @logout="logout" />
         <div class="main" :class="{active:isMiniMenu }">

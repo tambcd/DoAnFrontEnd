@@ -1,13 +1,17 @@
 <template>
   <div class="topbar">
-    <div class="toggle" @click="toggleMenu()">
+    <div class="toggle" @click="toggleApp">
       <ion-icon name="menu-outline"></ion-icon>
+    </div>
+    <div class="menu-app" v-if="showForm">
+      <img src="https://i.pinimg.com/originals/84/4e/8c/844e8cd4ab26c82286238471f0e5a901.png" alt="danh bạ">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Circle-icons-chat.svg/1024px-Circle-icons-chat.svg.png" alt="chat">
     </div>
     <div class="name-class">CNTT1 K60</div>
     <div class="header_right">
       <div class="icon_notify icon24"></div>
      
-      <Popover   >
+      <Popover >
         <template #content> 
           <div class="user-detail">
              <button class="user_icon icon36">{{ TitliAvatar }}</button>
@@ -39,11 +43,15 @@ export default {
   data() {
     return {
       miniMenu: true,
+      showForm: true,
       user: {},
       TitliAvatar: "TT",
     };
   },
   methods: {
+    toggleApp(){
+      this.showForm = !this.showForm;
+    },
     toggleMenu() {
       this.miniMenu = !this.miniMenu;
       this.$emit("toggleMenu", this.miniMenu);

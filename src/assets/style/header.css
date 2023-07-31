@@ -9,6 +9,23 @@
     display: flex;
     
 }
+.menu-app{
+    position: fixed;
+    top: 60px;
+    left: 90px;
+    width: 100%;
+    background-color: white;
+    color: #fff;
+    padding: 10px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+}
+.menu-app img {
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
 .icon_notify{
     cursor: pointer;
     background-image: url(../icon/notify.png);
