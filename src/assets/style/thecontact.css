@@ -26,10 +26,10 @@
     padding-left: 10px;
 }
 .body-contact{
+    padding: 8px 20px;
     height: 100%;
     width: calc(100% - 300px);
-    background-color: white;
-    margin-top: 70px;
+    background-color: #f5f5f5;    
 }
 .dropdown-items img{
     width: 30px;
@@ -79,14 +79,15 @@
     margin-right: 5px;
 }
 .infor{
-    margin-left: 30px;
+    cursor: pointer;    
     border: 1px solid grey;
     box-shadow: 3px 3px #888888;
     border-radius: 10px;
     padding: 20px;
     box-sizing: border-box;
-    margin-right: 20px;
-
+}
+.infor:hover{
+    background-color: #e8f2fe;
 }
 .des-infor{
     display: flex;
