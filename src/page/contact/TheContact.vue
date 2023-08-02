@@ -94,11 +94,14 @@
     </div>
   </div>
 </div>
+<ContactDetail fullname="Trần Văn Tám"/>
   
 </template>
 
 <script>
+import ContactDetail from "@/page/contact/ContactDetail.vue";
 export default {
+  components:{ContactDetail},
   data() {
     return {
       showDropdown: false,
