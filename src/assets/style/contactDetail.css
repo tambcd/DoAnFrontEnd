@@ -1,8 +1,65 @@
 .contact-detail{
+    padding-top: 20px;
     height: calc(100vh - 60px);
     position: fixed;
     top: 50px;
     right: 0;
     width: 50%;
-    background-color: aqua;
+    background-color: whitesmoke;
+    position: absolute;
+}
+.close{
+    position: fixed;
+    top: 70px;
+    right: 0px;
+    cursor: pointer;
+}
+.avatar-detail{
+    display: flex;
+    width: 100%;
+    margin-left: 50px;
+
+}
+.avatar-detail img{
+    width: 100px;
+    height: 100px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.tag{
+    width: 150px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tag img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.infor-detail{
+    margin-top: 20px;
+    border-top: 1px solid grey;
+    margin-bottom: 20px;
+
+}
+.detail-contact div {
+    display: flex;
+    padding-left: 50px;
+}
+.detail-contact div h3 {
+    width: 200px;
+}
+.detail-contact2 div {
+    display: flex;
+    padding-left: 50px;
+}
+.detail-contact2 div h3 {
+    width: 200px;
+}
+.infor-detail2 h1{
+    padding-left: 50px;
 }

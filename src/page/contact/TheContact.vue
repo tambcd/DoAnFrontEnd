@@ -57,8 +57,8 @@
         </div>
     </div>
     <div class="infor">
-      <div class="avatar">
-        <img src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/357409054_1369314393927348_2710285907220226602_n.jpg?_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1pS8PYldt2YAX9DH8Ha&_nc_ht=scontent.fhan14-3.fna&oh=00_AfBmEV10WmPeHH4dvI9e4AuWa793j1S9oD6hawMoE_DS3w&oe=64CE9FB4" alt="avatar">
+      <div class="avatar" @click="toggleShowInfor">
+        <img src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/357409054_1369314393927348_2710285907220226602_n.jpg?_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=sg04bTcP9GcAX-ytqmh&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCho5hUjUkzYpP5xZ3_IhZLxYEXtsTnsf322_3wcyx08A&oe=64D688B4" alt="avatar">
         <div class="des-infor">
           <h2>Trần Văn Tám</h2>
           <p>NV Tư vấn bán hàng</p>
@@ -94,7 +94,7 @@
     </div>
   </div>
 </div>
-<ContactDetail fullname="Trần Văn Tám"/>
+<ContactDetail v-if="showInfor" fullname="Trần Văn Tám"/>
   
 </template>
 
@@ -106,6 +106,7 @@ export default {
     return {
       showDropdown: false,
       showContact: false,
+      showInfor: false
     };
   },
   methods: {
@@ -114,6 +115,9 @@ export default {
     },
     toggleShowContact() {
       this.showContact = !this.showContact;
+    },
+    toggleShowInfor(){
+      this.showInfor = !this.showInfor;
     }
   }
 
