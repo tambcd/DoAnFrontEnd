@@ -1,7 +1,7 @@
 <template v-if="showInfor1">
 <div class="contact-detail">
     <div class="avatar-detail">
-        <img src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/357409054_1369314393927348_2710285907220226602_n.jpg?_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=sg04bTcP9GcAX-ytqmh&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCho5hUjUkzYpP5xZ3_IhZLxYEXtsTnsf322_3wcyx08A&oe=64D688B4" alt="avatar1">
+        <img urc = 'https://vapa.vn/wp-content/uploads/2022/12/anh-avatar-cute-054.jpg'/>
         <div class="des-infor">
             <h2>{{fullname}}</h2>
             <p>NV Tư vấn bán hàng</p>

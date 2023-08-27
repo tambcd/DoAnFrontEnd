@@ -1,0 +1,16 @@
+@font-face {
+    font-family: TAM fonts;
+    src: url(../../assets/fonts/GoogleSans-Regular.otf);
+}
+@font-face {
+    font-family: TAM fonts Bold;
+    src: url(../../assets/fonts/GoogleSans-Bold.otf);
+}
+@font-face {
+    font-family: TAM fonts Italic;
+    src: url(../../assets/fonts/GoogleSans-Italic.otf);
+}
+@font-face {
+    font-family: TAM fonts Thin;
+    src: url(../../assets/fonts/GoogleSans-Thin.otf);
+}

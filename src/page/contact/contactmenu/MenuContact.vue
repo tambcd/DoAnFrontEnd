@@ -1,5 +1,4 @@
 <template>
-<div class="the_contact">  
   <div class="left_menu">
     <div class="items-contact">
       <div>
@@ -42,86 +41,14 @@
       Thiết lập
     </div>
   </div>
-  <div class="body-contact">
-    <div class="all-contact">
-      <h1>Tất cả liên hệ</h1>
-      <div>
-              <button @click="toggleShowContact">Tất cả liên hệ
-                <img src="data:image/png;base64,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" alt="">
-              </button>
-              <div v-if="showContact">
-                <img src="" alt="">
-                Name
-              </div>
-        </div>
-    </div>
-    <div class="infor">
-      <div class="avatar" @click="toggleShowInfor">
-        <img src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/357409054_1369314393927348_2710285907220226602_n.jpg?_nc_cat=103&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=sg04bTcP9GcAX-ytqmh&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCho5hUjUkzYpP5xZ3_IhZLxYEXtsTnsf322_3wcyx08A&oe=64D688B4" alt="avatar">
-        <div class="des-infor">
-          <h2>Trần Văn Tám</h2>
-          <p>NV Tư vấn bán hàng</p>
-          <p>Văn phòng Tổng công ty - Trung tâm KD Online</p>
-        </div>
-      </div>
-          <div class="contact">
-            <div>
-              Đt di động 
-              <a>0366841290</a> 
-            </div>
-            <div>
-              Email cơ quan
-              <a>tam7@gmail.com</a> 
-            </div>
-            <div>
-              Skype
-              <a>https://www.facebook.com/profile.php?id=100025464006854</a> 
-            </div>
-            <div>
-              Đt cơ quan
-              <a>0366841290</a> 
-            </div>
-            <div>
-              Email cá nhân
-              <a>tam7@gmail.com</a> 
-            </div>
-            <div>
-              Facebook
-              <a>https://www.facebook.com/profile.php?id=100025464006854</a> 
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
-<ContactDetail v-if="showInfor" fullname="Trần Văn Tám"/>
-  
 </template>
 
 <script>
-import ContactDetail from "@/page/contact/ContactDetail.vue";
 export default {
-  components:{ContactDetail},
-  data() {
-    return {
-      showDropdown: false,
-      showContact: false,
-      showInfor: false
-    };
-  },
-  methods: {
-    toggleDropdown() {
-      this.showDropdown = !this.showDropdown;
-    },
-    toggleShowContact() {
-      this.showContact = !this.showContact;
-    },
-    toggleShowInfor(){
-      this.showInfor = !this.showInfor;
-    }
-  }
 
 }
 </script>
 
-<style> 
+<style>
+
 </style>

@@ -15,6 +15,7 @@
 @import url(login.css);
 @import url(thecontact.css);
 @import url(contactDetail.css);
+@import url(font.css);
 
 *::-webkit-scrollbar {
     width: 5px;
@@ -33,6 +34,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    font-family: MISA fonts;
+    font-size: 13px;
 }
 :root{
     --blue:#287bff;
