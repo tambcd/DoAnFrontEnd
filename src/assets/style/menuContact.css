@@ -1,0 +1,76 @@
+
+.items-contact{
+    height: 100%;
+    width: 100%;
+}
+.tag-sys{
+    height: 100px;
+    border-bottom: 1px solid ;
+}
+
+.tag-custom{
+    margin-top: 10px;
+    height: 300px;
+    overflow: auto;
+    
+}
+.mini-tag{
+    height: 40px !important;
+    overflow: hidden;
+}
+.item-tab{   
+    height: 40px;
+    width: 100%;    
+}
+.item-tab-main{       
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0 8px 16px;
+    font-family: TAM fonts Bold;
+    cursor: pointer;
+    height: 100%;
+}
+.tag-icon{
+    width: 40px;
+}
+.tag-title{
+    width: calc(100% - 40px);
+    font-size: 16px;
+    font-weight: 600;
+}
+.icon-infor{
+    font-size: 24px;
+}
+.item-tab:hover {
+    background-color: #e8f2fe;
+}
+.item-tab:hover .icon-action {
+    display: flex !important;
+}
+.icon-action{    
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    position: sticky; 
+    top: 50%;
+    right: 0;
+    display: none;
+}
+.icon-tag-action{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    width: 24px;
+    font-size: 30px;
+    font-weight: 700;
+}
+.icon-action-size{
+    width: 22px;
+    font-size: 30px;
+    font-weight: 700;
+}
+.action-delete{
+    color: red;
+}

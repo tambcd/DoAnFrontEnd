@@ -6,13 +6,13 @@
       </div>
       <div class="right-login">
         <div class="title_login">
-          <img src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/e19adc023378cfaab4f274dc82067b4d.png" alt="login">
+          <img src="https://cdn-icons-png.flaticon.com/512/5181/5181034.png" alt="login">
         </div>
         <div class="username">
-          <Input v-model:value="username" placeholder="Mã sinh viên..."  style="height: 40px"/>
+          <Input v-model:value="username" placeholder="Mã người dùng..."  style="height: 40px"/>
         </div>
         <div class="username">
-          <InputPassword v-model:value="password" placeholder="Mật khẩu" style="height: 40px"  />
+          <InputPassword v-model:value="passwordAcount" placeholder="Mật khẩu" style="height: 40px"  />
         </div>        
         <div class="btn_login">
           <Button type="primary"  style="width: 100%" @click="login()"
@@ -47,18 +47,17 @@ export default {
   data() {
     return {
       username: "",
-      password: "",
+      passwordAcount: "",
     };
   },
   methods: {
     login() {
       get(
-        `Accounts/login?username=${this.username} &password=${this.password}`,
+        `Accounts/login?username=${this.username} &password=${this.passwordAcount}`,
         (res) => {
-          if (res.data.account_id) {
-            localStorage.setItem("userId",res.data.account_id);
-            this.$emit("loginok",res.data)
+          if (res.data.account_id) {   
             localStorage.setItem("userId", res.data.account_id);
+            localStorage.setItem("userRole", res.data.role);
             this.$emit("loginok", res.data);
           } else {
             toast.error(Resource.errologin, {

@@ -66,6 +66,13 @@ export const post= (route = '', data, success, errorHandler) =>{
 export const put  = (route = '',param, data, success, errorHandler) =>{
     return  Axios.put(API + route +`/${param}`, data).then((response) =>success(response)).catch((error) => errorHandler(error));
 }
+/**
+ * Description: Hàm để put để thay đổi dữ liệu của một bản ghi nhất định.
+ * created : tvTam (22/02/2023)
+ */
+export const putNo  = (route = '', success, errorHandler) =>{
+    return  Axios.put(API + route).then((response) =>success(response)).catch((error) => errorHandler(error));
+}
 
 /**
  * Description: Hàm xóa dữ liệu dựa trên tham số đàu vào.

@@ -1,0 +1,11 @@
+.create_header-report{
+    display: flex;
+    justify-content: space-between;
+}
+.create_header-report .left-header{
+    display: flex;
+}
+.create_header-report .input{
+    width: 200px;
+    margin-left: 10px;
+}

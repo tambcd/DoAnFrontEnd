@@ -215,3 +215,14 @@ export function statusScore(score) {
 
 }
 
+export function Gender(gender){
+  switch (gender) {
+    case 0:
+      return "Nam"  
+    case 1:
+      return "Nữ"
+    default:
+      return "Khác"
+  }
+}
+

@@ -1,4 +1,7 @@
 export  const Resource = {
+    updateMessage :"Sửa thành công",
+    ImportMessage :"Nhập khẩu thành công",
+    saveMessage :"Thêm thành công",
     errologin:"Tài khoản mật khẩu không chính xác",
     typeAddEvent:{
         add:"Thêm mới sự kiên",

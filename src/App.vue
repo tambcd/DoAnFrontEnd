@@ -1,5 +1,5 @@
 <template>
-  <the-login v-if="!isLogin" @loginok="loginok" />
+  <the-login v-if="!isLogin" @loginok="(data)=>loginok(data)" />
   <div class="container" v-else>
     <div class="header-menu">
       <TheHeader
@@ -28,12 +28,20 @@ export default {
   name: "App",
   components: { TheHeader, TheLogin },
   created() {
-    this.getDataUser();
+    let userId = null;
+     userId= localStorage.getItem("userId");
+    if(userId != null){
+      this.isLogin = true;
+      this.getDataUser();
+    }
+    else{
+       this.isLogin = false;
+    }
   },
   data() {
     return {
       isMiniMenu: true,
-      isLogin: true,
+      isLogin: false,
       roleUser: 0,
       accountId: "",
     };
@@ -43,8 +51,7 @@ export default {
       this.isLogin = true;
     },
     loginok(res) {
-      this.isLogin = false;
-      console.log(res);
+      this.isLogin = true;
       this.roleUser = res.role;
     },
     getDataUser() {
@@ -53,11 +60,11 @@ export default {
         localStorage.getItem("userId"),
         (res) => {
           if (res.data) {
-            this.isLogin = false;
+            this.isLogin = true;
             this.roleUser = res.data.role;
             this.accountId = res.data.account_id;
           } else {
-            this.isLogin = true;
+            this.isLogin = false;
           }
         },
         (error) => {

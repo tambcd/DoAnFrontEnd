@@ -1,0 +1,63 @@
+.the-report {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    background: #f5f5f5;
+    margin-top: 1.5px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    
+}
+
+.left_menu-report {
+    height: 100%;
+    width: 240px;
+    background: #fff;
+}
+
+.body-report {
+    padding: 0px 20px;
+    height: 100%;
+    width: calc(100%);
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    overflow-y: auto;
+}
+.toolbar-workbook{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+}
+.left-toolbar{
+    font-size: 20px;
+    font-weight: 700;
+}
+.right-toolbar .action {
+    margin-left: 10px;
+}
+.export ion-icon{
+    font-size: 20px;
+}
+.ant-tabs ,
+.ant-tabs-content-holder,
+.ant-tabs-content,
+.ant-tabs-tabpane,
+.spreadHost{
+    height: 100%;
+    width: 100%;
+}
+.action_btn{
+    cursor: pointer;
+}
+
+
+
+

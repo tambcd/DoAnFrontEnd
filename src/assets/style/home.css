@@ -1,5 +1,40 @@
+.chat_room{
+    display: flex;
+    height: 100%;
+
+}
+.search_member_chat{
+    margin: 0 10px 10px 10px;
+}
+.left_menu_chat{
+    width: 300px;
+    height: 100%;
+}
+.item_member_chat{
+    height: 40px;
+    margin: 0 10px;
+    display: flex;    
+    align-items: center;
+    
+
+}
+.active{
+    background-color: #bae7ff;
+    border-radius: 4px;
+}
+.btn_name_chat{
+    width: 40px;
+    height: 40px;
+    border: unset;
+    border-radius: 4px;
+    font-size: 18px;
+}
+.name_member_chat{
+    padding-left: 10px;
+    font-size: 16px;
+}
 .home-chat{
-    width:100%;
+    width: calc(100% - 300px );
     height: 100%;  
     background-color: #bae7ff;
 }

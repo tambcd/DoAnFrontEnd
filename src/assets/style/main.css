@@ -16,6 +16,13 @@
 @import url(thecontact.css);
 @import url(contactDetail.css);
 @import url(font.css);
+@import url(contactItem.css);
+@import url(menuContact.css); 
+@import url(thereport.css); 
+@import url(worbook.css); 
+@import url(socialnetwork.css); 
+@import url(commentnew.css); 
+@import url(createreport.css); 
 
 *::-webkit-scrollbar {
     width: 5px;
@@ -87,6 +94,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    background: var(--white);
 
 }
 .toggle{

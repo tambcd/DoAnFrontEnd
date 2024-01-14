@@ -10,7 +10,7 @@
     
 }
 .menu-app{
-    
+    z-index: 10000;
     position: fixed;
     top: 50px;
     left: 0;

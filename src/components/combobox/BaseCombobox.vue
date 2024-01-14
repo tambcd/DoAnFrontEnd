@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     handleSearch(val) {
-        console.log(val);
       let res;
       if (!val || val.indexOf('@') >= 0) {
         res = [];

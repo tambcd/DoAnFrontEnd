@@ -114,8 +114,6 @@ export default {
         this.addEvent()    
     },
     addEvent() {
-           console.log(this.initEvent);
-
       post(`Schedules`,
       {
         schedule_name: this.initEvent.schedule_name,

@@ -1,0 +1,11 @@
+.comment-post-container{
+    height:600px ;
+}
+.ListComment_item{
+    height:560px ;
+    width: 100%;
+}
+.create_comment{
+    height: 100px;
+    width: 100%;
+}

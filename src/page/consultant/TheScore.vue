@@ -8,13 +8,32 @@
   />
   <Modal
     v-model:visible="visibleDelete"
-    title="Xóa điểm"
+    title="Tổng quan điểm"
     @ok="handleOkDelete"
-    width="50%"
+    width="100%"
+    wrap-class-name="full-modal"
     ok-text="Xóa"
     cancel-text="Hủy"
+    :footer="null"
   >
-    <span v-html="txtDelete"></span>
+    <div class="hearder_chart_score">
+      <Select
+        ref="select"
+        v-model:value="valueHKChart"
+        style="width: 200px; height: 35px"
+        @focus="focus"
+        placeholder="Chọn học kỳ"
+        @change="changeSemesterChart()"
+        
+      >
+        <SelectOption value="all">Tất cả</SelectOption>
+        <SelectOption v-for="semester in Semesters" :key="semester.semester" :value="semester.semester">Kỳ {{ semester.semester }} </SelectOption>
+
+      </Select>
+    </div>
+    <div class="body_chart_score">
+      <Bar :data="chartData" />
+    </div>
   </Modal>
   <div class="score">
     <div class="score-top">
@@ -34,32 +53,22 @@
             style="width: 200px; height: 35px"
             @focus="focus"
             placeholder="Chọn học kỳ"
+            @change="filterSemester"
           >
             <SelectOption value="all">Tất cả</SelectOption>
-            <SelectOption value="2020-2021-1">2020-2021-1</SelectOption>
-            <SelectOption value="2020-2021-2">2020-2021-2</SelectOption>
-            <SelectOption value="2021-2022-1">2021-2022-1</SelectOption>
-            <SelectOption value="2021-2022-2">2021-2022-2</SelectOption>
-            <SelectOption value="2022-2023-1">2022-2023-1</SelectOption>
-            <SelectOption value="2022-2023-2">2022-2023-2</SelectOption>
+            <SelectOption v-for="semester in Semesters" :key="semester.semester" :value="semester.semester">Kỳ {{ semester.semester }} </SelectOption>
+         
           </Select>
         </div>
-        <div class="display-score">
-          <Select
-            ref="select"
-            v-model:value="valueDisplay"
-            style="width: 200px"
-            @focus="focus"
-            placeholder="tất cả điểm"
-          >
-            <SelectOption value="2020-2021-1">Tổng kết theo kỳ</SelectOption>
-            <SelectOption value="2020-2021-2">Tất cả điểm</SelectOption>
-          </Select>
+        <div class="display-score">          
         </div>
       </div>
       <div class="score-action">
+        
         <div class="list-button">
-          <DropdownButton type="primary" v-show="isActionTable">
+          <Button @click="btndelete()" type="primary" danger>Thống kê</Button>
+
+          <DropdownButton type="primary">
             <a class="ant-dropdown-link" @click.prevent> Thêm </a>
             <template #overlay>
               <Menu>
@@ -69,7 +78,7 @@
 
                 <MenuItem>
                   <input
-                  class="custom-file-input"
+                    class="custom-file-input"
                     type="file"
                     name="file"
                     @change="ImportScore()"
@@ -86,7 +95,7 @@
     <div class="score-body">
       <div class="data-table-score">
         <Table
-          :dataSource="dataSourceScores"
+          :dataSource="dataFilterScores"
           :columns="columnsScore"
           :pagination="false"
         >
@@ -102,7 +111,7 @@
                 @click="btnUpdate(record)"
                 >Sửa</Button
               >
-              
+
               <Button type="primary" danger @click="btndelete(record)"
                 >Xóa</Button
               >
@@ -143,12 +152,30 @@ import {
 import { toast } from "vue3-toastify";
 import { Resource } from "@/common/resource/Resource";
 import DataObject from "@/common/helper/object";
-import { getByFilter, deleteOne, getById } from "@/common/api/api";
+import { getByFilter, deleteOne, getById, get } from "@/common/api/api";
 import { score4, statusScore } from "@/common/helper/format";
 import _ from "lodash";
 import ModelScore from "@/layout/form/ModelScore.vue";
 import axios from "axios";
+import { Bar } from "vue-chartjs";
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
 
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale
+);
 export default {
   components: {
     InputSearch,
@@ -162,10 +189,12 @@ export default {
     Pagination,
     ModelScore,
     Modal,
+    Bar,
   },
   name: "TheScore",
   created() {
     this.getDataUser();
+    this.getSemester()
 
     this.DataSudent();
     if (!this.isActionTable) {
@@ -176,6 +205,20 @@ export default {
   },
   data() {
     return {
+      Semesters:[],
+      chartData: {
+        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+        datasets: [
+          {
+            label: "Sinh viên",
+            backgroundColor: "#f87979",
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+      },
       header: {
         "Content-Type": "multipart/form-data",
       },
@@ -189,9 +232,11 @@ export default {
       visibleScore: false,
       valueDisplay: "Tất cả điểm",
       columnsScore: [],
-      sumRecordScore: 0,
+      sumRecordScore: 100,
       dataSourceScores: [],
+      dataFilterScores: [],
       valueHK: "Tất cả",
+      valueHKChart: "Tất cả",
       filterScore: {
         PageNumber: 1,
         PageSize: 10,
@@ -203,6 +248,32 @@ export default {
     };
   },
   methods: {
+    filterSemester(){
+      if(this.valueHK == "all"){
+        this.dataFilterScores = this.dataSourceScores;
+      }
+      else{
+        this.dataFilterScores = this.dataSourceScores.filter((obj) => obj.semester == this.valueHK);
+      }      
+    },
+    changeSemesterChart(){
+      let data =[];
+      if(this.valueHK == "all"){
+         data = this.dataSourceScores;
+      }
+      else{
+        data = this.dataSourceScores.filter((obj) => obj.semester == this.valueHKChart);
+      } 
+      this.chartScore(data);
+      console.log(this.chartData.datasets[0]);
+    },
+    chartScore(data) {
+      this.chartData.datasets[0].data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      data.forEach((number) => {       
+          this.chartData.datasets[0].data[Math.round(number.sore_number)]++;        
+      });
+
+    },
     ImportScore() {
       const formData = new FormData();
       formData.append("formFile", event.target.files[0]);
@@ -212,7 +283,14 @@ export default {
             "Content-Type": "multipart/form-data",
           },
         })
-        .then(() =>this.loadData())
+        .then(() => {
+          toast.success(Resource.ImportMessage, {
+            autoClose: 2000,
+            position: "top-center",
+          });
+          this.loadData();
+          this.getSemester()
+        })
         .catch((error) => {
           // Xử lý lỗi (nếu có)
           console.error(error);
@@ -316,10 +394,9 @@ export default {
       this.visibleScore = true;
       this.updateScore = record;
     },
-    btndelete(record) {
-      this.txtDelete = `Bạn có chắc chắn muôn xóa điểm môn <b>${record.subject_name}</b> của sinh viên <b>${record.full_name}</b>?`;
+    btndelete() {
+      this.chartScore(this.dataSourceScores);
       this.visibleDelete = true;
-      this.idDelete = record.score_id;
     },
     changeNumberPage(a, b) {
       this.filterScore.PageNumber = a;
@@ -331,22 +408,43 @@ export default {
       this.filterScore.PageNumber = a;
       this.loadData();
     },
+    getSemester(){
+      get(
+        "Scores/getSemester",
+        (res) => {
+          // Trường hợp thành công  gửi lên form sửa
+          if (res.data.length > 0) {            
+            this.Semesters = res.data;
+          } else {
+            this.Semesters = [];
+          }
+        },
+        (error) => {
+          // Trường hợp thất bại thì hiển thị toastMessage lỗi và ghi rõ lỗi xảy ra.
+          toast.error(Resource.VN_ErroData, {
+            autoClose: 2000,
+            position: "top-center",
+          });
+          console.log(error);
+        }
+      );
+    },
     loadData() {
-      getByFilter(
-        "Scores/getFilter",
-        this.filterScore,
+      get(
+        "Scores",
         (res) => {
           // Trường hợp thành công  gửi lên form sửa
           if (res.data.length > 0) {
             res.data.map((item) => {
-              item.score_number_4 = score4(item.score_number);
-              item.status = statusScore(item.score_number);
+              item.score_number_4 = score4(item.sore_number);
+              item.status = statusScore(item.sore_number);
             });
-            this.sumRecordScore = res.data[0].totalRecord;
             this.dataSourceScores = res.data;
+            this.dataFilterScores = res.data;
           } else {
             this.sumRecordScore = 0;
             this.dataSourceScores = [];
+            this.dataFilterScores = [];
           }
         },
         (error) => {
@@ -362,7 +460,9 @@ export default {
   },
   watch: {
     "filterScore.txtSearch": _.debounce(function () {
-      this.loadData();
+      
+      this.dataFilterScores = this.dataSourceScores.filter(obj => obj.subject_name.includes(this.filterScore.txtSearch));
+
     }, 500),
     valueHK(value) {
       if (value == "all") {
@@ -380,6 +480,12 @@ export default {
 </script>
 
 <style>
+.hearder_chart_score {
+  height: 50px;
+}
+.body_chart_score {
+  height: calc(95% - 50px);
+}
 .custom-file-input {
   color: transparent;
 }
@@ -387,7 +493,7 @@ export default {
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: 'Nhập Khẩu';
+  content: "Nhập Khẩu";
   color: black;
   display: inline-block;
   background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
@@ -409,6 +515,6 @@ export default {
   outline: 0;
 }
 .custom-file-input:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 </style>

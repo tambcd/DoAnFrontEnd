@@ -1,0 +1,19 @@
+.toolar-workbook{
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+.workbook_container{
+    height: calc(100% - 40px);
+}
+.right_toolbar .action-workbook{
+    width: 50px;
+    margin-right: 10px;
+}
+.right_toolbar{
+    display: flex;
+    flex-direction: row-reverse;
+}

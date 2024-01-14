@@ -1,5 +1,5 @@
 <template>
-  body1
+  menu
 </template>
 
 <script>

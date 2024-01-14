@@ -1,0 +1,66 @@
+.list-contact{  
+    
+    box-sizing: border-box;    
+}
+
+.infor{
+    overflow: hidden;
+    margin-bottom: 16px;
+    background-color: #fff;
+    color: #666;
+    font-size: 14px;
+    height: 210px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+.infor:hover{
+    background-color: #e8f2fe;
+}
+.infor .infor_name{
+    display: flex;
+    padding-top: 10px;
+
+}
+.infor .infor_name .avatar{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.infor .infor_name .avatar  img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.infor .infor_name .avatar  img:hover{
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+}
+
+.des-infor .name{
+    font-size: 16px;
+    font-weight: 700;
+}
+.contact{
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gr-inf div{
+    margin-top: 10px;
+}
+.avatar-text{
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid ;
+    width: 40px;
+    height: 40px;    
+    text-align: center;
+    border-radius: 50%;
+    background-color: aquamarine;
+}
+
